@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>SHAHNAMA • Haute Parfumerie & Fine Fragrances</title>
+  <meta name="description" content="Timeless fragrances meticulously crafted in France using the world's finest botanical ingredients. Discover our signature flacons and bespoke olfactory creations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. Minimal Initial Buffer Loader -->
+  <div id="loader" class="loader">
+    <div class="loader-content">
+      <div class="loader-crown">👑</div>
+      <div class="loader-brand">SHAHNAMA</div>
+      <div class="loader-bar-bg">
+        <div id="loader-bar-fill" class="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Announcement Bar -->
+  <aside aria-label="Special promotions" class="announcement-bar">
+    <div class="announcement-container">
+      <div class="announcement-item">
+        <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+        <span>COMPLIMENTARY SHIPPING ON ORDERS OVER $75</span>
+      </div>
+      <span class="announcement-separator">|</span>
+      <div class="announcement-item">
+        <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+        <span>SAMPLE EVERY ORDER</span>
+      </div>
+      <span class="announcement-separator">|</span>
+      <div class="announcement-item">
+        <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"/><rect width="20" height="5" x="2" y="7"/><line x1="12" x2="12" y1="22" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+        <span>LUXURY GIFT WRAPPING</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 3. Sticky Main Navigation Header -->
+  <header class="main-header" id="navbar">
+    <div class="header-container">
+      <!-- Mobile Menu Toggle Button -->
+      <div class="mobile-toggle-wrap">
+        <button id="mobile-menu-toggle" class="btn-icon" aria-label="Toggle navigation menu">
+          <svg id="hamburger-icon" class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          <svg id="close-menu-icon" class="icon-md hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Left Navigation Links (Desktop) -->
+      <nav class="nav-left desktop-only" aria-label="Primary navigation">
+        <div class="dropdown-wrapper" id="shop-dropdown-wrapper">
+          <button class="nav-link dropdown-btn" id="shop-dropdown-btn">
+            <span>SHOP</span>
+            <svg class="icon-xs chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu" id="shop-dropdown-menu">
+            <div class="dropdown-header">FRAGRANCE CATEGORIES</div>
+            <ul class="dropdown-list">
+              <li><button class="dropdown-item" data-navigate="shop-by-collection">Floral Bouquets</button></li>
+              <li><button class="dropdown-item" data-navigate="shop-by-collection">Warm & Sensual</button></li>
+              <li><button class="dropdown-item" data-navigate="shop-by-collection">Fresh & Radiant</button></li>
+              <li><button class="dropdown-item" data-navigate="shop-by-collection">Exclusive Collection</button></li>
+              <li class="dropdown-divider"></li>
+              <li><button class="dropdown-item featured" data-navigate="featured-fragrances">View All Fragrances →</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <button class="nav-link" data-navigate="shop-by-collection">COLLECTIONS</button>
+        <button class="nav-link" data-navigate="featured-fragrances">BESTSELLERS</button>
+      </nav>
+
+      <!-- Center Brand Logo -->
+      <div class="brand-logo-wrap" id="logo-btn" role="button" tabindex="0" aria-label="Shahnama Home">
+        <h1 class="brand-name">SHAHNAMA</h1>
+        <span class="brand-subtitle">PARFUMS</span>
+      </div>
+
+      <!-- Right Navigation & Action Icons -->
+      <div class="nav-right">
+        <nav class="desktop-only nav-extra">
+          <button class="nav-link" data-navigate="our-story">ABOUT</button>
+        </nav>
+
+        <div class="action-icons">
+          <!-- Search Icon Button -->
+          <button id="search-btn" class="btn-icon" aria-label="Search fragrances">
+            <svg class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+
+          <!-- User Account Icon -->
+          <button id="user-btn" class="btn-icon desktop-only" aria-label="Account">
+            <svg class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+          </button>
+
+          <!-- Shopping Bag Icon Button with Counter -->
+          <button id="cart-btn" class="btn-icon cart-trigger" aria-label="Shopping Cart">
+            <svg class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span id="cart-badge" class="cart-badge">1</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+      <nav class="mobile-nav-links">
+        <button class="mobile-nav-link" data-navigate="featured-fragrances">SHOP ALL</button>
+        <button class="mobile-nav-link" data-navigate="shop-by-collection">COLLECTIONS</button>
+        <button class="mobile-nav-link" data-navigate="featured-fragrances">BESTSELLERS</button>
+        <button class="mobile-nav-link" data-navigate="our-story">OUR STORY</button>
+        <button class="mobile-nav-link" data-navigate="promo-banner">SPECIAL OFFERS</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 4. Hero Section with 3 Flacon Stage -->
+  <section class="hero-section" id="hero">
+    <div class="ambient-glow glow-pink-top"></div>
+    <div class="ambient-glow glow-rose-bottom"></div>
+
+    <div class="hero-container">
+      <div class="hero-grid">
+        <!-- Left Column: Headline and Brand Narrative -->
+        <div class="hero-text-col">
+          <span class="hero-badge">CRAFTED TO CAPTIVATE</span>
+          <h2 class="hero-heading">
+            Scents that <br>
+            <span class="italic font-serif">leave a legacy.</span>
+          </h2>
+          <p class="hero-desc">
+            Veloura Parfums creates timeless fragrances that celebrate elegance, femininity, and unforgettable presence.
+          </p>
+
+          <!-- CTA Button -->
+          <div class="hero-cta-wrap">
+            <button class="btn-primary-dark" data-navigate="featured-fragrances">
+              <span>DISCOVER THE COLLECTION</span>
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+          </div>
+
+          <!-- Value Proposition Row -->
+          <div class="hero-values-grid">
+            <div class="hero-value-item">
+              <div class="value-icon-circle">
+                <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+              </div>
+              <div class="value-label">Clean<br>Ingredients</div>
+            </div>
+
+            <div class="hero-value-item">
+              <div class="value-icon-circle">
+                <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="value-label">Long Lasting<br>Performance</div>
+            </div>
+
+            <div class="hero-value-item">
+              <div class="value-icon-circle">
+                <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <div class="value-label">Made in<br>France</div>
+            </div>
+
+            <div class="hero-value-item">
+              <div class="value-icon-circle">
+                <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"/><rect width="20" height="5" x="2" y="7"/><line x1="12" x2="12" y1="22" y2="7"/></svg>
+              </div>
+              <div class="value-label">Luxury<br>Packaging</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Hero Visual Stage with 3 Interactive Perfumes -->
+        <div class="hero-stage-col">
+          <div class="stage-frame">
+            <img class="stage-bg-image" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85" alt="Veloura Parfums Inspiration Model">
+            <div class="stage-overlay"></div>
+            
+            <!-- Floating Petals & Accents -->
+            <div class="petal petal-1">❀</div>
+            <div class="petal petal-2">✿</div>
+
+            <!-- 3 Flacons Display Stage -->
+            <div class="flacons-stage">
+              <!-- Flacon 1: ROSE NOIR -->
+              <div class="stage-bottle bottle-rose-noir" data-id="rose-noir" role="button" tabindex="0">
+                <div class="bottle-cap cap-gold"></div>
+                <div class="bottle-neck neck-gold"></div>
+                <div class="bottle-body body-burgundy">
+                  <div class="glass-reflection"></div>
+                  <div class="bottle-label label-dark">
+                    <span class="label-brand">Veloura</span>
+                    <span class="label-sub">PARFUMS</span>
+                    <span class="label-line"></span>
+                    <span class="label-title">ROSE NOIR</span>
+                    <span class="label-conc">EXTRAIT DE PARFUM</span>
+                  </div>
+                </div>
+                <div class="bottle-shadow"></div>
+              </div>
+
+              <!-- Flacon 2: L'AMOUR (Center Hero Flacon) -->
+              <div class="stage-bottle bottle-lamour" data-id="lamour" role="button" tabindex="0">
+                <div class="bottle-cap cap-crystal-gold"></div>
+                <div class="bottle-neck neck-gold"></div>
+                <div class="bottle-body body-crystal-blush">
+                  <div class="glass-facet facet-left"></div>
+                  <div class="glass-facet facet-right"></div>
+                  <div class="glass-glow"></div>
+                  <div class="bottle-label label-light">
+                    <span class="label-brand">Veloura</span>
+                    <span class="label-sub">PARFUMS</span>
+                    <span class="label-line"></span>
+                    <span class="label-title">L'AMOUR</span>
+                    <span class="label-conc">EAU DE PARFUM</span>
+                  </div>
+                </div>
+                <div class="bottle-shadow hero-shadow"></div>
+              </div>
+
+              <!-- Flacon 3: EAU DE LUMIÈRE -->
+              <div class="stage-bottle bottle-lumiere" data-id="eau-de-lumiere" role="button" tabindex="0">
+                <div class="bottle-cap cap-gold"></div>
+                <div class="bottle-neck neck-gold"></div>
+                <div class="bottle-body body-amber">
+                  <div class="glass-reflection"></div>
+                  <div class="bottle-label label-light">
+                    <span class="label-brand">Veloura</span>
+                    <span class="label-sub">PARFUMS</span>
+                    <span class="label-line"></span>
+                    <span class="label-title">EAU DE LUMIÈRE</span>
+                    <span class="label-conc">EAU DE PARFUM</span>
+                  </div>
+                </div>
+                <div class="bottle-shadow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Scroll-Based Veil Unveiling Flacon Sequence -->
+  <section id="scroll-sequence" class="scroll-sequence" aria-label="Haute Parfumerie Flacon Unveiling Sequence">
+    <div id="canvas-container" class="canvas-sticky-wrap">
+      <canvas id="animation-canvas"></canvas>
+    </div>
+  </section>
+
+  <!-- 6. Shop By Collection Section -->
+  <section id="shop-by-collection" class="shop-by-collection">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <h2 class="section-title">SHOP BY COLLECTION</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="collections-grid">
+        <!-- Collection 1: Floral Bouquets -->
+        <article class="collection-card" data-collection="floral">
+          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=85" alt="Floral Bouquets Collection" class="card-bg-img" loading="lazy">
+          <div class="card-gradient gradient-floral"></div>
+          <div class="card-content">
+            <h3 class="card-heading">FLORAL BOUQUETS</h3>
+            <p class="card-desc">Soft. Romantic. Timeless.</p>
+            <button class="btn-outline-white" data-collection="floral">SHOP NOW</button>
+          </div>
+        </article>
+
+        <!-- Collection 2: Warm & Sensual -->
+        <article class="collection-card" data-collection="warm">
+          <img src="https://images.unsplash.com/photo-1508746829417-e6f548d8d6ed?auto=format&fit=crop&w=700&q=85" alt="Warm & Sensual Collection" class="card-bg-img" loading="lazy">
+          <div class="card-gradient gradient-warm"></div>
+          <div class="card-content">
+            <h3 class="card-heading">WARM & SENSUAL</h3>
+            <p class="card-desc">Rich. Alluring. Addictive.</p>
+            <button class="btn-outline-white" data-collection="warm">SHOP NOW</button>
+          </div>
+        </article>
+
+        <!-- Collection 3: Fresh & Radiant -->
+        <article class="collection-card" data-collection="fresh">
+          <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=700&q=85" alt="Fresh & Radiant Collection" class="card-bg-img" loading="lazy">
+          <div class="card-gradient gradient-fresh"></div>
+          <div class="card-content">
+            <h3 class="card-heading">FRESH & RADIANT</h3>
+            <p class="card-desc">Light. Elegant. Uplifting.</p>
+            <button class="btn-outline-white" data-collection="fresh">SHOP NOW</button>
+          </div>
+        </article>
+
+        <!-- Collection 4: Exclusive Collection -->
+        <article class="collection-card" data-collection="exclusive">
+          <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=700&q=85" alt="Exclusive Collection" class="card-bg-img" loading="lazy">
+          <div class="card-gradient gradient-exclusive"></div>
+          <div class="card-content">
+            <h3 class="card-heading">EXCLUSIVE COLLECTION</h3>
+            <p class="card-desc">Rare. Unique. Unforgettable.</p>
+            <button class="btn-outline-white" data-collection="exclusive">SHOP NOW</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Featured Fragrances Section -->
+  <section id="featured-fragrances" class="featured-fragrances">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <h2 class="section-title">FEATURED FRAGRANCES</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <!-- 5 Fragrances Grid -->
+      <div class="fragrances-grid" id="fragrances-grid">
+        <!-- Dynamically rendered via app.js for full interactivity -->
+      </div>
+
+      <div class="view-all-wrap text-center">
+        <button class="btn-text-arrow" data-navigate="featured-fragrances">
+          <span>VIEW ALL FRAGRANCES</span>
+          <span class="arrow-symbol">›</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Our Story / Brand Heritage Section -->
+  <section id="our-story" class="our-story">
+    <div class="section-container">
+      <div class="story-grid">
+        <!-- Left: Story Narrative -->
+        <div class="story-copy-col">
+          <span class="story-badge">OUR STORY</span>
+          <h2 class="story-heading">
+            The art of fine fragrance <br>
+            <span class="italic font-serif">is our heritage.</span>
+          </h2>
+          <p class="story-desc">
+            At Veloura Parfums, every scent is a work of art—meticulously crafted in France using the world's finest ingredients. We believe in timeless elegance, sustainable luxury, and the emotion that only a signature scent can evoke.
+          </p>
+
+          <div class="story-cta-wrap">
+            <button class="btn-primary-dark" id="btn-discover-craft">
+              <span>DISCOVER OUR CRAFT</span>
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+          </div>
+
+          <!-- 4 Feature Badges Row -->
+          <div class="story-pillars-grid">
+            <div class="story-pillar">
+              <div class="pillar-circle">
+                <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+              </div>
+              <div class="pillar-title">Finest Ingredients</div>
+              <p class="pillar-text">Sourced responsibly from around the world</p>
+            </div>
+
+            <div class="story-pillar">
+              <div class="pillar-circle">
+                <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 3h15"/><path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3"/><path d="M6 14h12"/></svg>
+              </div>
+              <div class="pillar-title">Expert Artisans</div>
+              <p class="pillar-text">Blended by master perfumers in France</p>
+            </div>
+
+            <div class="story-pillar">
+              <div class="pillar-circle">
+                <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+              </div>
+              <div class="pillar-title">Sustainable Luxury</div>
+              <p class="pillar-text">Eco-conscious choices for a better tomorrow</p>
+            </div>
+
+            <div class="story-pillar">
+              <div class="pillar-circle">
+                <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="pillar-title">Timeless Quality</div>
+              <p class="pillar-text">Made to be treasured for generations</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Flatlay Visual Composition -->
+        <div class="story-visual-col">
+          <div class="flatlay-card" id="flatlay-card" role="button" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=1200&q=85" alt="Veloura Parfums Craftsmanship & Raw Ingredients" class="flatlay-img">
+            <div class="flatlay-overlay"></div>
+            <div class="flatlay-badge">Raw Botanicals & Extrait</div>
+            <div class="flatlay-inset-info">
+              <div>
+                <span class="inset-tag">Grasse, France · Harvest 2025</span>
+                <h4 class="inset-title">Rose de Mai & Madagascar Bourbon Vanilla</h4>
+              </div>
+              <span class="inset-link">Explore Formula →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Promotional 20% Off Banner -->
+  <section class="promo-banner" id="promo-banner">
+    <!-- SVG Watermark in background -->
+    <svg class="promo-watermark" viewBox="0 0 200 200" fill="currentColor">
+      <path d="M100 20 C120 60 160 80 180 100 C160 120 120 140 100 180 C80 140 40 120 20 100 C40 80 80 60 100 20 Z" />
+      <circle cx="100" cy="100" r="22" fill="none" stroke="currentColor" stroke-width="2" />
+    </svg>
+
+    <div class="promo-container">
+      <div class="promo-flex">
+        <!-- 20% OFF display -->
+        <div class="promo-stat">
+          <span class="stat-number">20%</span>
+          <span class="stat-word">OFF</span>
+        </div>
+
+        <!-- Copy -->
+        <div class="promo-copy">
+          <h3 class="promo-title">Because you deserve something exquisite.</h3>
+          <p class="promo-desc">
+            Enjoy 20% off your order for a limited time only. Use code <strong class="promo-code">VELOURA20</strong> at checkout.
+          </p>
+        </div>
+
+        <!-- Button -->
+        <div class="promo-btn-wrap">
+          <button class="btn-shop-sale" id="btn-shop-sale">SHOP THE SALE</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Loved By Our Clients (Testimonials Carousel) -->
+  <section class="clients-testimonials" id="clients">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <h2 class="section-title">LOVED BY OUR CLIENTS</h2>
+        <div class="diamond-divider">
+          <span class="diamond-line"></span>
+          <span class="diamond-star">✦</span>
+          <span class="diamond-line"></span>
+        </div>
+      </div>
+
+      <!-- Carousel Container with Arrows -->
+      <div class="carousel-wrapper">
+        <button id="carousel-prev" class="btn-carousel" aria-label="Previous testimonial">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+
+        <div class="testimonials-grid" id="testimonials-grid">
+          <!-- Rendered dynamically via app.js -->
+        </div>
+
+        <button id="carousel-next" class="btn-carousel" aria-label="Next testimonial">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Newsletter Strip -->
+  <section class="newsletter-section">
+    <div class="section-container">
+      <div class="newsletter-card">
+        <div class="newsletter-grid">
+          <div class="newsletter-media">
+            <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=500&q=85" alt="Botanical Perfumery Bouquet" class="newsletter-img">
+          </div>
+          <div class="newsletter-copy">
+            <h3 class="newsletter-title">Stay inspired & be the first to know</h3>
+            <p class="newsletter-desc">Exclusive offers, new arrivals, and fragrance stories.</p>
+          </div>
+          <div class="newsletter-form-wrap" id="newsletter-form-wrap">
+            <form id="newsletter-form" class="newsletter-form">
+              <input type="email" id="newsletter-email" placeholder="Enter your email address" required class="input-newsletter">
+              <button type="submit" class="btn-newsletter">SIGN ME UP</button>
+            </form>
+            <div id="newsletter-success" class="newsletter-success hidden">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Welcome to the Inner Circle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. Luxury Footer -->
+  <footer class="main-footer" id="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-col-brand">
+          <div class="footer-logo" id="footer-logo">
+            <span class="footer-brand-title">Veloura</span>
+            <span class="footer-brand-sub">PARFUMS</span>
+          </div>
+          <p class="footer-tagline">Timeless fragrances. Unforgettable you.</p>
+
+          <!-- Social Links -->
+          <div class="social-links">
+            <a href="#instagram" class="social-circle" aria-label="Instagram">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="#facebook" class="social-circle" aria-label="Facebook">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#pinterest" class="social-circle" aria-label="Pinterest">
+              <span class="font-serif bold">P</span>
+            </a>
+            <a href="#tiktok" class="social-circle" aria-label="TikTok">
+              <span>♪</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Shop Column -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">SHOP</h4>
+          <ul class="footer-links">
+            <li><button data-navigate="featured-fragrances">All Fragrances</button></li>
+            <li><button data-navigate="featured-fragrances">Bestsellers</button></li>
+            <li><button data-navigate="shop-by-collection">Gift Sets</button></li>
+            <li><button data-navigate="featured-fragrances">Travel Sprays</button></li>
+            <li><button data-navigate="promo-banner" class="link-highlight">Sale</button></li>
+          </ul>
+        </div>
+
+        <!-- Collections Column -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">COLLECTIONS</h4>
+          <ul class="footer-links">
+            <li><button data-navigate="shop-by-collection">Floral Bouquets</button></li>
+            <li><button data-navigate="shop-by-collection">Warm & Sensual</button></li>
+            <li><button data-navigate="shop-by-collection">Fresh & Radiant</button></li>
+            <li><button data-navigate="shop-by-collection">Exclusive Collection</button></li>
+          </ul>
+        </div>
+
+        <!-- Customer Care Column -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">CUSTOMER CARE</h4>
+          <ul class="footer-links">
+            <li><a href="#shipping">Shipping & Delivery</a></li>
+            <li><a href="#returns">Returns & Exchanges</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- About Column -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">ABOUT</h4>
+          <ul class="footer-links">
+            <li><button data-navigate="our-story">Our Story</button></li>
+            <li><button data-navigate="our-story">Ingredients</button></li>
+            <li><button data-navigate="our-story">Craftsmanship</button></li>
+            <li><button data-navigate="our-story">Sustainability</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Guarantees Row -->
+      <div class="footer-guarantees-row">
+        <div class="guarantee-item">
+          <div class="guarantee-icon">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+          </div>
+          <div>
+            <div class="guarantee-title">COMPLIMENTARY SHIPPING</div>
+            <div class="guarantee-sub">On orders over $75</div>
+          </div>
+        </div>
+
+        <div class="guarantee-item">
+          <div class="guarantee-icon">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          </div>
+          <div>
+            <div class="guarantee-title">EASY RETURNS</div>
+            <div class="guarantee-sub">30-day return policy</div>
+          </div>
+        </div>
+
+        <div class="guarantee-item">
+          <div class="guarantee-icon">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div>
+            <div class="guarantee-title">SECURE PAYMENTS</div>
+            <div class="guarantee-sub">Shop with confidence</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legal & Copyright Bar -->
+      <div class="footer-legal-bar">
+        <p>© 2026 Veloura & Shahnama Haute Parfumerie. All rights reserved.</p>
+        <div class="legal-links">
+          <a href="#privacy">Privacy Policy</a>
+          <span>|</span>
+          <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 13. Interactive Slide-Over Cart Drawer -->
+  <aside id="cart-drawer" class="cart-drawer-backdrop" aria-hidden="true">
+    <div class="cart-drawer-panel" role="dialog" aria-labelledby="cart-drawer-title">
+      <!-- Cart Header -->
+      <div class="cart-header">
+        <div class="cart-header-title-wrap">
+          <svg class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <h2 id="cart-drawer-title" class="cart-title">Your Shopping Bag (<span id="cart-count-title">1</span>)</h2>
+        </div>
+        <button id="cart-close-btn" class="btn-icon" aria-label="Close cart">✕</button>
+      </div>
+
+      <!-- Free Shipping Bar -->
+      <div class="cart-shipping-bar">
+        <p id="shipping-progress-text" class="shipping-text">Add $0.00 more to qualify for Free Shipping</p>
+        <div class="shipping-track">
+          <div id="shipping-fill" class="shipping-fill" style="width: 100%"></div>
+        </div>
+      </div>
+
+      <!-- Cart Items Body -->
+      <div class="cart-body" id="cart-items-container">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Cart Footer & Checkout -->
+      <div class="cart-footer" id="cart-footer">
+        <!-- Promo Form -->
+        <form id="promo-form" class="promo-form">
+          <input type="text" id="promo-input" placeholder="Promo Code (e.g. VELOURA20)" class="input-promo">
+          <button type="submit" class="btn-apply-promo">APPLY</button>
+        </form>
+        <div id="promo-message" class="promo-message hidden"></div>
+
+        <!-- Breakdown -->
+        <div class="cart-breakdown">
+          <div class="breakdown-row">
+            <span>Subtotal</span>
+            <span id="cart-subtotal">$128.00</span>
+          </div>
+          <div class="breakdown-row hidden" id="discount-row">
+            <span class="text-green">Promotional Discount (20%)</span>
+            <span class="text-green" id="cart-discount">-$25.60</span>
+          </div>
+          <div class="breakdown-row">
+            <span>Shipping</span>
+            <span id="cart-shipping">FREE</span>
+          </div>
+          <div class="breakdown-row total-row">
+            <span>Total</span>
+            <span id="cart-total">$128.00</span>
+          </div>
+        </div>
+
+        <button id="btn-checkout" class="btn-checkout">
+          <span>PROCEED TO CHECKOUT</span>
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+
+        <div class="checkout-secure-badge">
+          <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>256-bit SSL encrypted & secure checkout</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 14. Quick View Fragrance Olfactory Modal -->
+  <div id="quick-view-modal" class="modal-backdrop" aria-hidden="true" role="dialog">
+    <div class="modal-card">
+      <button class="modal-close" id="quick-view-close-btn" aria-label="Close dialog">✕</button>
+      <div class="modal-grid">
+        <div class="modal-media">
+          <img id="qv-image" src="" alt="Perfume Flacon">
+          <span id="qv-badge" class="qv-badge hidden">Bestseller</span>
+        </div>
+        <div class="modal-details">
+          <div class="qv-meta-top">
+            <span id="qv-concentration" class="qv-concentration">EAU DE PARFUM</span>
+            <div class="qv-rating">
+              <span class="star-gold">★</span>
+              <span id="qv-rating-val" class="rating-num">4.9</span>
+              <span id="qv-reviews" class="reviews-count">(142)</span>
+            </div>
+          </div>
+
+          <h3 id="qv-name" class="qv-title">L'AMOUR</h3>
+          <p id="qv-price" class="qv-price">$128.00</p>
+          <p id="qv-desc" class="qv-desc">Description text...</p>
+
+          <!-- Scent Notes Pyramid -->
+          <div class="qv-pyramid">
+            <div class="pyramid-head">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+              <span>OLFACTORY NOTES</span>
+            </div>
+            <div class="pyramid-rows">
+              <div><strong class="text-wine">Top: </strong><span id="qv-top-notes">Pink Pepper, Mandarin</span></div>
+              <div><strong class="text-wine">Heart: </strong><span id="qv-heart-notes">Rose de Mai, Peony</span></div>
+              <div><strong class="text-wine">Base: </strong><span id="qv-base-notes">White Musk, Amber</span></div>
+            </div>
+          </div>
+
+          <!-- Size Selector -->
+          <div class="qv-size-wrap">
+            <label class="size-label">BOTTLE SIZE</label>
+            <div class="size-buttons">
+              <button class="btn-size" data-size="50ml">50ml / 1.7 oz</button>
+              <button class="btn-size active" data-size="100ml">100ml / 3.4 oz</button>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="qv-actions">
+            <button id="qv-add-cart-btn" class="btn-qv-add">ADD TO CART</button>
+            <button id="qv-wishlist-btn" class="btn-qv-wishlist" aria-label="Toggle wishlist">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 15. Fragrance Search Modal -->
+  <div id="search-modal" class="modal-backdrop" aria-hidden="true" role="dialog">
+    <div class="search-modal-card">
+      <div class="search-modal-header">
+        <div class="search-input-wrap">
+          <svg class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="search-input" placeholder="Search fragrances, notes (e.g. Rose, Vanilla, Bergamot)..." class="search-input">
+        </div>
+        <button id="search-close-btn" class="btn-icon" aria-label="Close search">✕</button>
+      </div>
+
+      <!-- Quick Popular Tags -->
+      <div class="popular-tags-wrap">
+        <span class="tags-label">
+          <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          POPULAR NOTES:
+        </span>
+        <div class="tags-list">
+          <button class="tag-pill" data-query="Rose">Rose</button>
+          <button class="tag-pill" data-query="Vanilla">Vanilla</button>
+          <button class="tag-pill" data-query="Amber">Amber</button>
+          <button class="tag-pill" data-query="Jasmine">Jasmine</button>
+          <button class="tag-pill" data-query="Oud">Oud</button>
+          <button class="tag-pill" data-query="Fresh">Fresh</button>
+          <button class="tag-pill" data-query="Floral">Floral</button>
+        </div>
+      </div>
+
+      <!-- Search Results List -->
+      <div class="search-results-list" id="search-results-list">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 16. Floating Animated Toast -->
+  <div id="toast" class="toast hidden">
+    <div class="toast-icon-wrap" id="toast-icon-wrap">
+      <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <span id="toast-msg" class="toast-text">Message</span>
+    <button id="toast-action" class="toast-action hidden">View Bag</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
